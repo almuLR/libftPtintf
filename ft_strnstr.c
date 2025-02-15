@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: almudenalopezrodriguez <almudenalopezro    +#+  +:+       +#+        */
+/*   By: almlopez <almlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 17:11:19 by almudenalop       #+#    #+#             */
-/*   Updated: 2025/01/26 17:59:10 by almudenalop      ###   ########.fr       */
+/*   Updated: 2025/02/09 11:20:27 by almlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_equals(const char *haystack, const char *needle, size_t i, size_t len)
+static int	is_equals(const char *haystack, const char *needle, size_t i,
+			size_t len)
 {
 	size_t	j;
 
