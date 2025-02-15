@@ -6,7 +6,7 @@
 /*   By: almlopez <almlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 12:50:17 by almlopez          #+#    #+#             */
-/*   Updated: 2025/02/09 13:12:11 by almlopez         ###   ########.fr       */
+/*   Updated: 2025/02/15 18:33:22 by almlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static int	ft_putnbr_base_valid_base(char *base)
 	return (1);
 }
 
-static void	ft_convert_to_base_base(long naux, char *base, int size, char *result)
+static void	ft_convert_to_base_base(unsigned long naux, char *base, int size, char *result)
 {
 	int	n;
 
@@ -95,30 +95,24 @@ static void	ft_convert_to_base_base(long naux, char *base, int size, char *resul
 	reverse_base(result, n);
 }
 
-int	ft_putnbr_base(int nbr, char *base)
+int	ft_putnbr_base(unsigned long nbr, char *base)
 {
 	int		size;
 	int		n;
-	long	naux;
 	char	result[1000];
 
 	size = 0;
 	n = 0;
 	while (base[size] != '\0')
-	{
 		size++;
-	}
 	if (!ft_putnbr_base_valid_base(base))
-	{
 		return (0);
-	}
-	naux = nbr;
-	if (naux < 0)
+	if (nbr == 0)
 	{
-		write(1, "-", 1);
-		naux = -naux;
+		write(1, "0", 1);
+		return(1);
 	}
-	ft_convert_to_base_base(naux, base, size, result);
+	ft_convert_to_base_base(nbr, base, size, result);
 	while (result[n] != '\0')
 		n++;
 	write(1, result, n);

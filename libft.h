@@ -6,7 +6,7 @@
 /*   By: almlopez <almlopez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 10:59:35 by almlopez          #+#    #+#             */
-/*   Updated: 2025/02/15 15:21:24 by almlopez         ###   ########.fr       */
+/*   Updated: 2025/02/15 16:53:27 by almlopez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-int	ft_putnbr_base(int nbr, char *base);
+int	ft_putnbr_base(unsigned long nbr, char *base);
 int	ft_putnbr_unsigned(unsigned int nbr, char *base);
 int	ft_putptr(void *ptr, int fd);
 #endif
